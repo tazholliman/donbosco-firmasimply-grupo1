@@ -1,0 +1,22 @@
+.papa{
+    width:auto;
+    height:auto;
+    border:rgb(117, 117, 240) solid 4px;
+    background-color: white(32 18 0 0);
+    display: grid;
+    margin-left:auto;
+    margin-top: auto;
+  
+}
+.button{
+  text-align: center;
+  margin-top: 55px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.form-group{
+    font-size: medium;
+}
+.container-fluid{
+    margin-top: 51px;
+}
