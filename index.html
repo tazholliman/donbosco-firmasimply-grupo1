@@ -97,23 +97,25 @@
                         <li class="sidebar-item"><a href="index2.html" class="sidebar-link"> <i
                                     class="mdi mdi-border-outside"></i> </i><span class="hide-menu"> Píldoras
                                 </span></a></li>
-                                                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                                 href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span
                                     class="hide-menu">Registros</span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="html/authentication-login.html" class="sidebar-link"><i
-                                            class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Login </span></a>
+                                <li class="sidebar-item"><a href="html/authentication-login.html"
+                                        class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span
+                                            class="hide-menu"> Login </span></a>
                                 </li>
-                                <li class="sidebar-item"><a href="html/authentication-register.html" class="sidebar-link"><i
-                                            class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Registro
+                                <li class="sidebar-item"><a href="html/authentication-register.html"
+                                        class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span
+                                            class="hide-menu"> Logout
                                         </span></a></li>
                             </ul>
-
+<button id="logout">Logout</button>
 
                     </ul>
                 </nav>
 
-   
+
 
         </aside>
         <!-- AQUI TERMINA LA BARRA DEL MENU LATERAL -->
@@ -133,12 +135,13 @@
                 <div class="row">
 
                     <div class="card card-hover">
-                        <div class="box bg-success text-center">
-                            <h6 class="text-white">Firma de Entrada</h6>
-                        </div>
+                       
+                            <button Id="firma" type="submit">Firma de entrada</button>                         
+                           
+                  
 
                         <div class="anotaciones">
-                            <input type="text" class="form-control" placeholder="Anotaciones" aria-label="Anotación"
+                            <input type="text" class="form-control" placeholder="Nota" aria-label="Anotación"
                                 required="">
                         </div>
 
@@ -199,7 +202,7 @@
                                     </div>
                                 </div>
                                 <div class="d-flex flex-row comment-row mt-0">
-                                    
+
                                     <div class="comment-text w-100">
                                         <h6 class="font-medium">Alicia Estrada</h6>
                                         <span class="mb-3 d-block">Último acceso</span>
@@ -215,7 +218,7 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Tareas Pendientes(to do list)</h4>
+                                <h4 class="card-title">Tareas Pendientes</h4>
                                 <div class="todo-widget scrollable" style="height:450px;">
                                     <ul class="list-task todo-list list-group mb-0" data-role="tasklist">
                                         <li class="list-group-item todo-item" data-role="task">
@@ -385,18 +388,24 @@
 
     </div>
 
+    <!-- IMPORTAR LOS SIGUIENTE JS EN TU PÁGINA PRINCIPAL (index.html) -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="/assets/js/firmasimply/app.js"></script>
+    <script type="module" src="/assets/js/firmasimply/logout.js"></script>
+    <script type="module" src="/assets/js/firmasimply/index.js"></script>
 
-            <script src="assets/libs/jquery/dist/jquery.min.js"></script>
-            <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
 
-            <!-- <script src="../../dist/js/waves.js"></script> -->
-            <!--Menu sidebar -->
-            <script src="assets/dist/js/sidebarmenu.js"></script>
-            <!--Custom JavaScript -->
-            <script src="assets/dist/js/custom.min.js"></script>
-            <!--This page JavaScript -->
-            <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
+    <!-- <script src="../../dist/js/waves.js"></script> -->
+    <!--Menu sidebar -->
+    <script src="assets/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="assets/dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
 
 </body>
 
