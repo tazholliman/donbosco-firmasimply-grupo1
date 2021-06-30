@@ -122,27 +122,269 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title">Tablero</h4>
                         <div class="ms-auto text-end">
-                            
-                            </nav>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <!-- AQUI EMPIEZA CABECERA DE LA PAGINA- BOTONES DE REGISTRO Y CUADRO DE COMENTARIOS -->
             <div class="container-fluid">
                 <div class="row">
 
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                    <div class="card card-hover">
+                        <div class="box bg-success text-center">
+                            <h6 class="text-white">Firma de Entrada</h6>
+                        </div>
 
-                    </div>
-
-                    <div class="row">
+                        <div class="anotaciones">
+                            <input type="text" class="form-control" placeholder="Anotaciones" aria-label="Anotación"
+                                required="">
+                        </div>
 
                     </div>
                 </div>
+
+
+
+
+
+                <!-- AQUI TERMINA CABECERA DE LA PAGINA- BOTON DE REGISTRO Y CUADRO DE COMENTARIOS-->
+
+                <!-- AQUI EMPIEZAN LOS LISTADOS DE TAREAS, PILDORAS Y ULTIMOS REGISTROS -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Último Acceso</h4>
+                            </div>
+                            <div class="comment-widgets scrollable">
+
+                                <div class="d-flex flex-row comment-row mt-0">
+
+                                    <div class="comment-text w-100">
+                                        <h6 class="font-medium">Alicia Estrada</h6>
+                                        <span class="mb-3 d-block">Último acceso</span>
+                                        <div class="comment-footer">
+                                            <span class="text-muted float-end">ayer, 17:25hrs</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-row comment-row">
+
+                                    <div class="comment-text active w-100">
+                                        <div class="comment-text w-100">
+                                            <h6 class="font-medium">Alicia Estrada</h6>
+                                            <span class="mb-3 d-block">Último acceso</span>
+                                            <div class="comment-footer">
+                                                <span class="text-muted float-end">ayer, 17:25hrs</span>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-row comment-row">
+
+                                    <div class="comment-text w-100">
+                                        <div class="comment-text w-100">
+                                            <h6 class="font-medium">Alicia Estrada</h6>
+                                            <span class="mb-3 d-block">Último acceso</span>
+                                            <div class="comment-footer">
+                                                <span class="text-muted float-end">ayer, 17:25hrs</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row comment-row mt-0">
+                                    
+                                    <div class="comment-text w-100">
+                                        <h6 class="font-medium">Alicia Estrada</h6>
+                                        <span class="mb-3 d-block">Último acceso</span>
+                                        <div class="comment-footer">
+                                            <span class="text-muted float-end">ayer, 17:25hrs</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Tareas Pendientes(to do list)</h4>
+                                <div class="todo-widget scrollable" style="height:450px;">
+                                    <ul class="list-task todo-list list-group mb-0" data-role="tasklist">
+                                        <li class="list-group-item todo-item" data-role="task">
+                                            <div class="form-check">
+                                                <span class="todo-desc fw-normal">Terminar prácticas de MySql,
+                                                    módulo 5</span>
+                                                <span class="badge rounded-pill bg-primary float-end">Martes.
+                                                    week
+                                                </span>
+
+                                                </label>
+                                            </div>
+                                            <div class="item-date"> 25 jun 2021</div>
+
+                                        </li>
+                                        <li class="list-group-item todo-item" data-role="task">
+                                            <div class="form-check">
+
+                                                <span class="todo-desc fw-normal">Terminar Porfolio de Free Code
+                                                    Camp.
+                                                </span>
+                                                <span class="badge rounded-pill bg-primary float-end">Esta
+                                                    semana
+                                                    week
+                                                </span>
+                                                </label>
+                                            </div>
+                                            <div class="item-date"> 27 jun 2021</div>
+                                        </li>
+                                        <li class="list-group-item todo-item" data-role="task">
+                                            <div class="form-check">
+
+                                                <span class="todo-desc fw-normal">Terminar Estructura app
+                                                    FirmaSimply página Ppal.</span>
+                                                <span class="badge rounded-pill bg-info float-end">Martes</span>
+                                                </label>
+                                            </div>
+                                            <div class="item-date"> 29 jun 2021</div>
+
+                                        </li>
+                                        <li class="list-group-item todo-item" data-role="task">
+                                            <div class="form-check">
+
+                                                <span class="todo-desc fw-normal">Seguir ejercicios de Free Code
+                                                    Camp de Java Script</span>
+                                                <span class="badge rounded-pill bg-warning float-end">jueves
+                                                </span>
+                                                </label>
+                                            </div>
+                                            <div class="item-date"> 01 jul 2021</div>
+                                        </li>
+                                        <li class="list-group-item todo-item" data-role="task">
+                                            <div class="form-check">
+                                                <span class="todo-desc fw-normal">Prácticar js con Piedra,
+                                                    papel,
+                                                    tijera</span>
+                                                <span class="badge rounded-pill bg-info float-end">Viernes</span>
+                                                </label>
+                                            </div>
+                                            <div class="item-date"> 02 jul 2021</div>
+                                        <li class="list-group-item todo-item" data-role="task">
+                                            <div class="form-check">
+                                                <span class="todo-desc fw-normal">Cerrar test proyecto
+                                                    FirmaSimply</span>
+                                                <span class="badge rounded-pill bg-info float-end">Lunes</span>
+                                                </label>
+                                            </div>
+                                            <div class="item-date"> 5 jul 2021</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card -->
+
+                    <!-- card new -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title mb-0">Píldoras pendientes</h4>
+                            </div>
+                            <ul class="list-style-none">
+                                <li class="d-flex no-block card-body">
+                                    <i class="fa fa-check-circle w-30px mt-1"></i>
+                                    <div>
+                                        <a href="#" class="mb-0 font-medium p-0">Animación Css</a>
+                                        <span class="text-muted">Asignada, pendiente de Profesorado</span>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="tetx-right">
+                                            <h5 class="text-muted mb-0">20</h5>
+                                            <span class="text-muted font-16">jun</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="d-flex no-block card-body border-top">
+                                    <i class="fa fa-gift w-30px mt-1"></i>
+                                    <div>
+                                        <a href="#" class="mb-0 font-medium p-0">Free Code Camp curso 300hrs
+                                            Diseño
+                                            Web</a>
+                                        <span class="text-muted">Como incluir documento en CV, Linkedin, Git
+                                            Hub,
+                                            etc...</span>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="tetx-right">
+                                            <h5 class="text-muted mb-0">6</h5>
+                                            <span class="text-muted font-16">Jul</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="d-flex no-block card-body border-top">
+                                    <i class="fa fa-plus w-30px mt-1"></i>
+                                    <div>
+                                        <a href="#" class="mb-0 font-medium p-0">Bases de datos en MySql
+                                        </a>
+                                        <span class="text-muted">Preparar ejemplos o ejercicios
+                                            ...</span>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="tetx-right">
+                                            <h5 class="text-muted mb-0">12</h5>
+                                            <span class="text-muted font-16">Jul</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="d-flex no-block card-body border-top">
+                                    <i class="fa fa-leaf w-30px mt-1"></i>
+                                    <div>
+                                        <a href="#" class="mb-0 font-medium p-0">Java Script</a>
+                                        <span class="text-muted">Bucles</span>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="tetx-right">
+                                            <h5 class="text-muted mb-0">15</h5>
+                                            <span class="text-muted font-16">Jul</span>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- column -->
+
+
             </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-lg-6">
+
+            <footer class="footer text-center">
+                <strong>Realizado por Grupo 1 Fundación Don Bosco- F5.</strong>
+            </footer>
+
+        </div>
+
+    </div>
+
 
             <script src="assets/libs/jquery/dist/jquery.min.js"></script>
             <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
