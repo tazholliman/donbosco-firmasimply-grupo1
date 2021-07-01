@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+        content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>FirmaSimply</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/assets/images/favicon.png">
+    <link href="assets/dist/css/style.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- AQUI EMPIEZA EL NAVBAR -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+
+                    <a class="navbar-brand" href="index.html">
+
+                        <b class="logo-icon ps-2">
+
+                            <img src="assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+
+                        </b>
+                        <span class="logo-text">
+                            <h3>FirmaSimply</h3>
+                        </span>
+                    </a>
+
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
+                            class="ti-menu ti-close"></i></a>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+
+                    <ul class="navbar-nav float-start me-auto">
+                        <li class="nav-item d-none d-lg-block"><a
+                                class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
+                                data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+
+                    </ul>
+
+                    <ul class="navbar-nav float-end">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#"
+                                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end user-dd animated"
+                                aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user me-1 ms-1"></i>
+                                    Mi perfil</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:void(0)"><i
+                                        class="fa fa-power-off me-1 ms-1"></i> Logout</a>
+                                <div class="dropdown-divider"></div>
+                                <div class="ps-4 p-10"><a href="javascript:void(0)"
+                                        class="btn btn-sm btn-success btn-rounded text-white">Ver perfil</a></div>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- AQUI TERMINA EL NAVBAR -->
+
+        <!-- AQUI EMPIEZA LA BARRA DEL MENU LATERAL -->
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+
+            <div class="scroll-sidebar">
+
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="pt-4">
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                    class="hide-menu">Tablero principal</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="index.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
+                                    class="hide-menu">Tareas</span></a></li>
+                        <li class="sidebar-item"><a href="tareas.html" class="sidebar-link"> <i
+                                    class="mdi mdi-border-outside"></i> </i><span class="hide-menu"> Píldoras
+                                </span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span
+                                    class="hide-menu">Registros</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="html/authentication-login.html"
+                                        class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span
+                                            class="hide-menu"> Login </span></a>
+                                </li>
+                                <li class="sidebar-item"><a href="" class="sidebar-link"><i
+                                            class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Logout
+                                        </span></a></li>
+                            </ul>
+                            <button id="logout">Logout</button>
+                </nav>
+
+
+
+        </aside>
+        <!-- AQUI TERMINA LA BARRA DEL MENU LATERAL -->
+        <!-- Contenido Principal -->
+        <div class="page-wrapper">
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <h4 class="page-title">Tablero</h4>
+                        <div class="ms-auto text-end">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- AQUI EMPIEZA CABECERA DE LA PAGINA- BOTONES DE REGISTRO Y CUADRO DE COMENTARIOS -->
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="card card-hover">
+
+                        <button Id="firma" type="submit">Firma de entrada</button>
+
+
+
+                        <div class="anotaciones">
+                            <input type="text" class="form-control" placeholder="Nota" aria-label="Anotación"
+                                required="">
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- AQUI TERMINA CABECERA DE LA PAGINA- BOTON DE REGISTRO Y CUADRO DE COMENTARIOS-->
+
+                <!-- AQUI EMPIEZAN LOS LISTADOS DE TAREAS, PILDORAS Y ULTIMOS REGISTROS -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Último Acceso</h4>
+                            </div>
+                            <div class="comment-widgets scrollable">
+
+                                <div class="d-flex flex-row comment-row mt-0">
+
+                                    <div class="comment-text w-100">
+                                        <h6 class="font-medium">Alicia Estrada</h6>
+                                        <span class="mb-3 d-block">Último acceso</span>
+                                        <div class="comment-footer">
+                                            <span class="text-muted float-end">ayer, 17:25hrs</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-row comment-row">
+
+                                    <div class="comment-text active w-100">
+                                        <div class="comment-text w-100">
+                                            <h6 class="font-medium">Alicia Estrada</h6>
+                                            <span class="mb-3 d-block">Último acceso</span>
+                                            <div class="comment-footer">
+                                                <span class="text-muted float-end">ayer, 17:25hrs</span>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-row comment-row">
+
+                                    <div class="comment-text w-100">
+                                        <div class="comment-text w-100">
+                                            <h6 class="font-medium">Alicia Estrada</h6>
+                                            <span class="mb-3 d-block">Último acceso</span>
+                                            <div class="comment-footer">
+                                                <span class="text-muted float-end">ayer, 17:25hrs</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row comment-row mt-0">
+
+                                    <div class="comment-text w-100">
+                                        <h6 class="font-medium">Alicia Estrada</h6>
+                                        <span class="mb-3 d-block">Último acceso</span>
+                                        <div class="comment-footer">
+                                            <span class="text-muted float-end">ayer, 17:25hrs</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Tareas Pendientes</h4>
+                                <div class="todo-widget scrollable" style="height:450px;">
+                                    <ul class="list-task todo-list list-group mb-0" data-role="tasklist">
+                                        <li class="list-group-item todo-item" data-role="task">
+                                            <div class="form-check">
+                                                <span class="todo-desc fw-normal">Terminar prácticas de MySql,
+                                                    módulo 5</span>
+                                                <span class="badge rounded-pill bg-primary float-end">Martes.
+                                                    week
+                                                </span>
+
+                                                </label>
+                                            </div>
+                                            <div class="item-date"> 25 jun 2021</div>
+
+                                        </li>
+                                        <li class="list-group-item todo-item" data-role="task">
+                                            <div class="form-check">
+
+                                                <span class="todo-desc fw-normal">Terminar Porfolio de Free Code
+                                                    Camp.
+                                                </span>
+                                                <span class="badge rounded-pill bg-primary float-end">Esta
+                                                    semana
+                                                    week
+                                                </span>
+                                                </label>
+                                            </div>
+                                            <div class="item-date"> 27 jun 2021</div>
+                                        </li>
+                                        <li class="list-group-item todo-item" data-role="task">
+                                            <div class="form-check">
+
+                                                <span class="todo-desc fw-normal">Terminar Estructura app
+                                                    FirmaSimply página Ppal.</span>
+                                                <span class="badge rounded-pill bg-info float-end">Martes</span>
+                                                </label>
+                                            </div>
+                                            <div class="item-date"> 29 jun 2021</div>
+
+                                        </li>
+                                        <li class="list-group-item todo-item" data-role="task">
+                                            <div class="form-check">
+
+                                                <span class="todo-desc fw-normal">Seguir ejercicios de Free Code
+                                                    Camp de Java Script</span>
+                                                <span class="badge rounded-pill bg-warning float-end">jueves
+                                                </span>
+                                                </label>
+                                            </div>
+                                            <div class="item-date"> 01 jul 2021</div>
+                                        </li>
+                                        <li class="list-group-item todo-item" data-role="task">
+                                            <div class="form-check">
+                                                <span class="todo-desc fw-normal">Prácticar js con Piedra,
+                                                    papel,
+                                                    tijera</span>
+                                                <span class="badge rounded-pill bg-info float-end">Viernes</span>
+                                                </label>
+                                            </div>
+                                            <div class="item-date"> 02 jul 2021</div>
+                                        <li class="list-group-item todo-item" data-role="task">
+                                            <div class="form-check">
+                                                <span class="todo-desc fw-normal">Cerrar test proyecto
+                                                    FirmaSimply</span>
+                                                <span class="badge rounded-pill bg-info float-end">Lunes</span>
+                                                </label>
+                                            </div>
+                                            <div class="item-date"> 5 jul 2021</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card -->
+
+                    <!-- card new -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title mb-0">Píldoras pendientes</h4>
+                            </div>
+                            <ul class="list-style-none">
+                                <li class="d-flex no-block card-body">
+                                    <i class="fa fa-check-circle w-30px mt-1"></i>
+                                    <div>
+                                        <a href="#" class="mb-0 font-medium p-0">Animación Css</a>
+                                        <span class="text-muted">Asignada, pendiente de Profesorado</span>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="tetx-right">
+                                            <h5 class="text-muted mb-0">20</h5>
+                                            <span class="text-muted font-16">jun</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="d-flex no-block card-body border-top">
+                                    <i class="fa fa-gift w-30px mt-1"></i>
+                                    <div>
+                                        <a href="#" class="mb-0 font-medium p-0">Free Code Camp curso 300hrs
+                                            Diseño
+                                            Web</a>
+                                        <span class="text-muted">Como incluir documento en CV, Linkedin, Git
+                                            Hub,
+                                            etc...</span>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="tetx-right">
+                                            <h5 class="text-muted mb-0">6</h5>
+                                            <span class="text-muted font-16">Jul</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="d-flex no-block card-body border-top">
+                                    <i class="fa fa-plus w-30px mt-1"></i>
+                                    <div>
+                                        <a href="#" class="mb-0 font-medium p-0">Bases de datos en MySql
+                                        </a>
+                                        <span class="text-muted">Preparar ejemplos o ejercicios
+                                            ...</span>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="tetx-right">
+                                            <h5 class="text-muted mb-0">12</h5>
+                                            <span class="text-muted font-16">Jul</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="d-flex no-block card-body border-top">
+                                    <i class="fa fa-leaf w-30px mt-1"></i>
+                                    <div>
+                                        <a href="#" class="mb-0 font-medium p-0">Java Script</a>
+                                        <span class="text-muted">Bucles</span>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="tetx-right">
+                                            <h5 class="text-muted mb-0">15</h5>
+                                            <span class="text-muted font-16">Jul</span>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- column -->
+
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-lg-6">
+
+            <footer class="footer text-center">
+                <strong>Realizado por Grupo 1 Fundación Don Bosco- F5.</strong>
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <!-- IMPORTAR LOS SIGUIENTE JS EN TU PÁGINA PRINCIPAL (index.html) -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="assets/js/firmasimply/app.js"></script>
+    <script type="module" src="assets/js/firmasimply/logout.js"></script>
+    <script type="module" src="assets/js/firmasimply/index.js"></script>
+
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+
+    <!-- <script src="../../dist/js/waves.js"></script> -->
+    <!--Menu sidebar -->
+    <script src="assets/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="assets/dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
+
+</body>
+
+</html>
