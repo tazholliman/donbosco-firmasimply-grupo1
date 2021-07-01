@@ -2,7 +2,6 @@ import Auth from './Modules/Auth/Auth.js';
 import Tarea from './Modules/Tarea.js';
 import Categoria from './Modules/Categoria.js';
 
-
 // Funcionalidad mostrar listado de tareas
 
 // Funcionalidad crear una tarea
