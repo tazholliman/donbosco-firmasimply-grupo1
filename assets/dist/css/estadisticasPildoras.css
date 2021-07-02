@@ -1,0 +1,27 @@
+  .todo-stats {
+    position: relative;
+    text-align: center;
+    padding: 5px 10px;
+    margin: 10px 0;
+    color: var(--white);
+  }
+   
+  .todo-stats svg {
+    position: absolute;
+  }
+
+  
+   
+  @media screen and (min-width: 600px) {  
+    .todo-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .todo-form {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-column-gap: 5px;
+    }
+  } 
