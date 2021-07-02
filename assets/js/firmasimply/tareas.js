@@ -1,3 +1,4 @@
+
 // import Auth from './Modules/Auth/Auth.js';
 // import tarea from './Modules/Tarea.js';
 // import Categoria from './Modules/Categoria.js';
@@ -136,3 +137,5 @@ class Tarea {
     // Show success message
     UI.showAlert('Tarea Removed', 'success');
   });
+
+
