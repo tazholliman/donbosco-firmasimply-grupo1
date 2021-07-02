@@ -12,6 +12,11 @@ async function getListadoFirmas() {
 
 // Funcionalidad de Firmar
 
+function firmar() {
+    document.getElementById('btn').onclick;
+    firmar();
+}
+
 // Funcionalidad mostrar Listado Tareas
 
 // Funcionalidad mostrar Listado Píldoras
