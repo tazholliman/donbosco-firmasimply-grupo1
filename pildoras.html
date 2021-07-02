@@ -93,31 +93,23 @@
                                 href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Tablero principal</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="widgets.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
+                                href="tareas.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
                                     class="hide-menu">Tareas</span></a></li>
-                        <li class="sidebar-item"><a href="index2.html" class="sidebar-link"> <i
+                        <li class="sidebar-item"><a href="pildoras.html" class="sidebar-link"> <i
                                     class="mdi mdi-border-outside"></i> </i><span class="hide-menu"> Píldoras
                                 </span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                                 href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span
                                     class="hide-menu">Registros</span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="html/authentication-login.html"
+                                <li class="sidebar-item"><a href="login.html"
                                         class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span
                                             class="hide-menu"> Login </span></a>
                                 </li>
-                                <li class="sidebar-item"><a href="html/authentication-register.html"
-                                        class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span
-                                            class="hide-menu"> Registro
-                                        </span></a></li>
+                                <button id="logout">Logout</button>
                             </ul>
-
-
                     </ul>
                 </nav>
-
-
-
         </aside>
         <!-- AQUI TERMINA LA BARRA DEL MENU LATERAL -->
         <!-- Contenido Principal -->
@@ -145,7 +137,7 @@
                                 <h4 class="card-title">Crear Píldora</h4>
                                 <div class="todo-widget scrollable">
                                     <div class="comment-text w-100">
-                                         <form class="todo-form">
+                                         <!-- <form class="todo-form">
                                             <div class="form-wrapper">
                                               <input type="text" name="name" autofocus>
                                               <svg aria-hidden="true">
@@ -158,8 +150,8 @@
                                                 <use xlink:href="#button"></use>
                                               </svg>
                                             </div>
-                                          </form> 
-                                        <!-- <form id="pildora-form">
+                                          </form>  -->
+                                        <form id="pildora-form">
                                             <div class="form-group">
                                                 <label for="nombre">Nombre</label>
                                                 <input type="text" id="nombre" class="form-control" />
@@ -169,11 +161,11 @@
                                                 <input type="text" id="descripcion" class="form-control" />
                                             </div>
                                             <div class="form-group">
-                                                <label for="presentacion">Fecha presentación</label>
-                                                <input type="date" id="presentacion" class="form-control" />
+                                                <label for="fecha_presentacion">Fecha presentación</label>
+                                                <input type="date" id="fecha_presentacion" class="form-control" />
                                             </div>
                                             <input type="submit" value="Add Pildora" class="btn btn-primary btn-block" />
-                                        </form> -->
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -187,8 +179,8 @@
                             <div class="card-body">
                                 <h5 class="card-title mb-0">Tasks</h5>
                             </div>
-                            <ol class="todo-list"></ol>
-                            <!-- <table class="table table-striped">
+                            <!-- <ol class="todo-list"></ol> -->
+                            <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>Nombre</th>
@@ -201,7 +193,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="pildora-list"></tbody>
-                            </table> -->
+                            </table>
                         </div>
                     </div>
                     <!-- ============================================================== -->
@@ -215,7 +207,7 @@
                     <!-- End Right sidebar -->
                     <!-- ============================================================== -->
                 </div>
-                <div class="col-md-11">
+                <!-- <div class="col-md-11">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title mb-0">Tasks</h5>
@@ -235,7 +227,12 @@
                             </svg>
                           </div>
                     </div>
-                </div>
+                </div> -->
+
+                <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+                <script type="module" src="assets/js/firmasimply/app.js"></script>
+                <script type="module" src="assets/js/firmasimply/logout.js"></script>
+                <script type="module" src="assets/js/firmasimply/pildoras.js"></script>
                 
 
                 <script src="assets/libs/jquery/dist/jquery.min.js"></script>
@@ -248,7 +245,6 @@
                 <!--Custom JavaScript -->
                 <script src="assets/dist/js/custom.min.js"></script>
                 <!--This page JavaScript -->
-                <script src="assets/dist/js/agregarPildora.js"></script>
                 <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
 
 </body>
