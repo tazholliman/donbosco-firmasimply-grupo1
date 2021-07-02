@@ -1,10 +1,11 @@
-// import Auth from './Modules/Auth/Auth.js';
-// import Pildora from './Modules/Pildora.js';
+import Auth from './Modules/Auth/Auth.js';
+import Pildoras from './Modules/Pildora.js';
 
 async function getListadoPildoras() {
-    //
+    let res = await Pildoras.getListadoPildoras();
+    console.log(res);
 }
-
+getListadoPildoras();
 // Pildora Class: Represents a Pildora
 class Pildora {
 	constructor(nombre, descripcion, fecha_presentacion) {
@@ -13,12 +14,13 @@ class Pildora {
 		this.fecha_presentacion = fecha_presentacion
 	}
 }
-
 class Store {
 	static addPildora(pildora) {
         const pildoras = Store.getPildoras();
         pildoras.push(pildora);
         localStorage.setItem('pildoras', JSON.stringify(pildoras));
+        Pildoras.crearPildora()
+
     }
 	static removePildora(fecha_presentacion) {
         const pildoras = Store.getPildoras();
