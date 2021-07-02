@@ -1,218 +1,134 @@
 // import Auth from './Modules/Auth/Auth.js';
 // import Pildora from './Modules/Pildora.js';
 
-// async function getListadoPildoras() {
-//     //
-// }
+async function getListadoPildoras() {
+    //
+}
 
-// // Funcionalidad crear píldora
-// //
-// const todoForm = document.querySelector(".todo-form");
-// const todoList = document.querySelector(".todo-list");
-// const totalTasks = document.querySelector(".total-tasks span");
-// const completedTasks = document.querySelector(".completed-tasks span");
-// const remainingTasks = document.querySelector(".remaining-tasks span");
-// let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-
-// if (localStorage.getItem("tasks")) {
-//   tasks.map((task) => {
-//     createTask(task);
-//   });
-// }
-
-// // submit form
-// todoForm.addEventListener("submit", function (e) {
-//   e.preventDefault();
-//   const input = this.name;
-//   const inputValue = input.value;
-
-//   if (inputValue != "") {
-//     const task = {
-//       id: new Date().getTime(),
-//       name: inputValue,
-//       isCompleted: false
-//     };
-
-//     tasks.push(task);
-//     localStorage.setItem("tasks", JSON.stringify(tasks));
-//     createTask(task);
-//     todoForm.reset();
-//   }
-//   input.focus();
-// });
-
-// // remove task
-// todoList.addEventListener("click", (e) => {
-//   if (
-//     e.target.classList.contains("remove-task") ||
-//     e.target.parentElement.classList.contains("remove-task")
-//   ) {
-//     const taskId = e.target.closest("li").id;
-//     removeTask(taskId);
-//   }
-// });
-
-// // update task - change status or name
-// todoList.addEventListener("input", (e) => {
-//   const taskId = e.target.closest("li").id;
-//   updateTask(taskId, e.target);
-// });
-
-// // prevent new lines with Enter
-// todoList.addEventListener("keydown", function (e) {
-//   if (e.keyCode === 13) {
-//     e.preventDefault();
-//   }
-// });
-
-
-// // create task
-// function createTask(task) {
-//   const taskEl = document.createElement("li");
-//   taskEl.setAttribute("id", task.id);
-//   const taskElMarkup = `
-//     <div class="checkbox-wrapper">
-//       <input type="checkbox" id="${task.name}-${task.id}" name="tasks" ${
-//     task.isCompleted ? "checked" : ""
-//   }>
-//       <label for="${task.name}-${task.id}">
-//         <svg class="checkbox-empty">
-//           <use xlink:href="#checkbox_empty"></use>
-//         </svg>
-//         <svg class="checkmark">
-//           <use xlink:href="#checkmark"></use>
-//         </svg>
-//       </label>
-//       <span ${!task.isCompleted ? "contenteditable" : ""}>${task.name}</span>
-//     </div>
-//     <button class="remove-task" title="Remove ${task.name} task">
-//       <svg>
-//         <use xlink:href="#close"></use>
-//       </svg>
-//     </button>
-//   `;
-//   taskEl.innerHTML = taskElMarkup;
-//   todoList.appendChild(taskEl);
-//   countTasks();
-// }
-
-// // remove task
-// function removeTask(taskId) {
-//   tasks = tasks.filter((task) => task.id !== parseInt(taskId));
-//   localStorage.setItem("tasks", JSON.stringify(tasks));
-//   document.getElementById(taskId).remove();
-//   countTasks();
-// }
-
-// // update task
-// function updateTask(taskId, el) {
-//   const task = tasks.find((task) => task.id === parseInt(taskId));
-
-//   if (el.hasAttribute("contentEditable")) {
-//     task.name = el.textContent;
-//   } else {
-//     const span = el.nextElementSibling.nextElementSibling;
-//     task.isCompleted = !task.isCompleted;
-//     if (task.isCompleted) {
-//       span.removeAttribute("contenteditable");
-//       el.setAttribute("checked", "");
-//     } else {
-//       el.removeAttribute("checked");
-//       span.setAttribute("contenteditable", "");
-//     }
-//   }
-//   localStorage.setItem("tasks", JSON.stringify(tasks));
-//   countTasks();
-// }
-
-// function countTasks() {
-//   totalTasks.textContent = tasks.length;
-//   const completedTasksArray = tasks.filter((task) => task.isCompleted === true);
-//   completedTasks.textContent = completedTasksArray.length;
-//   remainingTasks.textContent = tasks.length - completedTasksArray.length;
-// }
-
+// Pildora Class: Represents a Pildora
 class Pildora {
-    constructor(nombre, descripcion, presentacion){
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.presentacion = presentacion;
-    }
-  }
-
-const defaultPildoras = [
-	{
-		nombre: 'Pildora 1',
-		descripcion: 'Brad Traversy',
-		presentacion: '12345'
-	},
-	{
-		nombre: 'Pildora 2',
-		descripcion: 'Mehul Mohan',
-		presentacion: '6789'
-        
+	constructor(nombre, descripcion, fecha_presentacion) {
+		this.nombre = nombre
+		this.descripcion = descripcion
+		this.fecha_presentacion = fecha_presentacion
 	}
-]
+}
 
-class UI {
-    static displayPildoras(){
-        defaultPildoras.forEach(pildora => UI.addPildoraToList(pildora))
+class Store {
+	static addPildora(pildora) {
+        const pildoras = Store.getPildoras();
+        pildoras.push(pildora);
+        localStorage.setItem('pildoras', JSON.stringify(pildoras));
     }
-    static clearFileds(){
-        document.getElementById("nombre").value = ""
-        document.getElementById("descripcion").value = ""
-        document.getElementById("presentacion").value = ""
+	static removePildora(fecha_presentacion) {
+        const pildoras = Store.getPildoras();
+        pildoras.forEach((pildora, index) => {
+            if(pildora.fecha_presentacion === fecha_presentacion){
+                pildoras.splice(index, 1);
+            }
+        });
+        localStorage.setItem('pildoras', JSON.stringify(pildoras));
     }
-    static deletePildora(target){
-        if (target.classList.contains('delete')) {
-			// we clicked the X icon
-			target.parentElement.parentElement.remove()
-		}
-    }
-    static addPildoraToList(pildora) {
-        const list = document.getElementById("pildora-list") // get the #pildora-list DOM node here
-        const row = document.createElement("tr")// create a TR row element here (document.createElement)
-        row.innerHTML = `
-        <td>${pildora.nombre}</td>
-        <td>${pildora.descripcion}</td>
-        <td>${pildora.presentacion}</td>
-        <td><input type="checkbox"></td> 
-        <td>${Date()}</td>
-        <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
-        `
-        list.appendChild(row)
+	static getPildoras() {
+        let pildoras = localStorage.getItem('pildoras');
+        if(pildoras === null) {
+            return [];
+        } else {
+            return JSON.parse(pildoras);
+        }
     }
 }
 
+// UI Class: Handle UI Tasks
+class UI {
+	static showAlert(message, className) {
+		const div = document.createElement('div')
+		div.innerText = message
+		div.className = `alert alert-${className}`
+		document.getElementById('pildora-form').prepend(div)
+
+		setTimeout(() => {
+			div.remove()
+		}, 2000)
+	}
+
+	static deletePildora(target) {
+		if (target.classList.contains('delete')) {
+			// we clicked the X icon
+			target.parentElement.parentElement.remove()
+		}
+	}
+	static clearFields() {
+		const descripcion = document.getElementById('descripcion')
+		const nombre = document.getElementById('nombre')
+		const fecha_presentacion = document.getElementById('fecha_presentacion')
+		descripcion.value = ''
+		nombre.value = ''
+		fecha_presentacion.value = ''
+	}
+
+	static displayPildoras() {
+		const pildoras = Store.getPildoras();
+		pildoras.forEach((pildora) => UI.addPildoraToList(pildora))
+	}
+
+	static addPildoraToList(pildora) {
+		const list = document.getElementById('pildora-list')
+
+		const row = document.createElement('tr')
+
+		row.innerHTML = `
+    <td>${pildora.nombre}</td>
+    <td>${pildora.descripcion}</td>
+    <td>${pildora.fecha_presentacion}</td>
+    <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
+    `
+
+		list.appendChild(row)
+	}
+}
+
+// Event: Display Pildoras
 UI.displayPildoras()
 
+// Event: Add a Pildora
 document.querySelector('#pildora-form').addEventListener('submit', addAPildora, false)
 
 function addAPildora(e) {
 	// prevent actual submission
 	e.preventDefault()
 
-	// Capturar los valores del Form
-    const nombre = document.getElementById("nombre").value
-    const descripcion = document.getElementById("descripcion").value
-    const presentacion = document.getElementById("presentacion").value
-	// Crear un nuevo objeto pildora
-    const pildora = new Pildora(nombre, descripcion, presentacion)
+	// Get Form Values
+	const descripcion = document.getElementById('descripcion').value
+	const nombre = document.getElementById('nombre').value
+	const fecha_presentacion = document.getElementById('fecha_presentacion').value
 
-    //Aunque no tenga un valor definido en la funcion, se encarga de darle este valor por defecto a cuaqluier variable que se asigne después.
+	if (!descripcion || !nombre || !fecha_presentacion) {
+		UI.showAlert('Please enter correct details', 'danger')
+		return
+	}
 
-	// Añadir el objeto pildora creado a UI (mostrarlo en HTML)
-    UI.addPildoraToList(pildora)
+	// Instantiate a new Pildora object
+	const pildora = new Pildora(nombre, descripcion, fecha_presentacion)
 
-    UI.clearFileds()
-    
+	// Add pildora object to UI
+	UI.addPildoraToList(pildora)
+
+	// Add pildora to store
+	Store.addPildora(pildora)
+
+	UI.showAlert('Pildora Added', 'success')
+
+	// Clear fields
+	UI.clearFields()
 }
-    document.getElementById('pildora-list').addEventListener('click', handleRemove)
-    function handleRemove(e) {
-        // Remove pildora from UI
-        UI.deletePildora(e.target)
-    }
-// Funcionalidad borrar píldora
 
+document.getElementById('pildora-list').addEventListener('click', handleRemove)
+function handleRemove(e) {
+	// Remove pildora from UI
+	UI.deletePildora(e.target)
+	UI.showAlert('Pildora Removed', 'success')
 
-// Funcionalidad marcar una píldora como presentada o pendiente
+	// Remove pildora from store
+	Store.removePildora(e.target.parentElement.previousElementSibling.textContent)
+}
