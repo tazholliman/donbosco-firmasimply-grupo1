@@ -1,6 +1,7 @@
 import Auth from './Modules/Auth/Auth.js';
 import Tareas from './Modules/Tarea.js';
-// import Categoria from './Modules/Categoria.js';
+import Categoria from './Modules/Categoria.js';
+
 async function getListadoTareas() {
   let res = await Tareas.getListadoTareas();
 
@@ -12,33 +13,33 @@ async function getListadoTareas() {
     const row = document.createElement('tr');
 
     row.innerHTML = `
-          <td>${arrayData[i].titulo}</td>
+          <td>${arrayData[i].nombre}</td>
           <td>${arrayData[i].categoria}</td>
           <td>${arrayData[i].descripcion}</td>
           <td>${arrayData[i].estado}</td>
-          <td>${arrayData[i].fecha}</td>
-          <td>${arrayData[i].borrar}</td>
-          <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
-        `;
+          <td>${arrayData[i].created_at}</td>
+          <td><a href="#" id="${arrayData[i].id}" class="btn btn-danger btn-sm delete">X</a></td>
+
+         `
 
     list.appendChild(row);
 
-    categoria_id: 1
-created_at: "2021-07-02T12:49:00.000000Z"
-descripcion: "asdasd"
-estado: 0
-id: 26
-titulo: "sadasdas"
-updated_at: "2021-07-02T12:49:00.000000Z"
-user_id: 2
-  }
-}
+//     categoria_id: 1
+// created_at: "2021-07-02T12:49:00.000000Z"
+// descripcion: "asdasd"
+// estado: 0
+// id: 26
+// nombre: "sadasdas"
+// updated_at: "2021-07-02T12:49:00.000000Z"
+// user_id: 2
+   }
+ }
 getListadoTareas();
 
 class Tarea {
-  constructor(nombre, categoria, descripcion) {
+  constructor(nombre, categoria_id, descripcion) {
     this.nombre = nombre;
-    this.categoria = categoria;
+    this.categoria_id = categoria_id;
     this.descripcion = descripcion;
   }
 }
@@ -58,7 +59,7 @@ class UI {
 
     row.innerHTML = `
         <td>${tarea.nombre}</td>
-        <td>${tarea.categoria}</td>
+        <td>${tarea.categoria_id}</td>
         <td>${tarea.descripcion}</td>
         <td></td>
         <td></td>
@@ -74,21 +75,21 @@ class UI {
     }
   }
 
-  static showAlert(message, className) {
-    const div = document.createElement('div');
-    div.className = `alert alert-${className}`;
-    div.appendChild(document.createTextNode(message));
-    const container = document.querySelector('.container');
-    const form = document.querySelector('#tarea-form');
-    container.insertBefore(div, form);
+  // static showAlert(message, className) {
+  //   const div = document.createElement('div');
+  //   div.className = `alert alert-${className}`;
+  //   div.appendChild(document.createTextNode(message));
+  //   const container = document.querySelector('.container');
+  //   const form = document.querySelector('#tarea-form');
+  //   container.insertBefore(div, form);
 
-    // Vanish in 3 seconds
-    setTimeout(() => document.querySelector('.alert').remove(), 3000);
-  }
+  //   // Vanish in 3 seconds
+  //   setTimeout(() => document.querySelector('.alert').remove(), 3000);
+  // }
 
   static clearFields() {
     document.querySelector('#nombre').value = '';
-    document.querySelector('#categoria').value = '';
+    document.querySelector('#categoria_id').value = '';
     document.querySelector('#descripcion').value = '';
   }
 }
@@ -112,7 +113,7 @@ class Store {
     localStorage.setItem('tareas', JSON.stringify(tareas));
   }
 
-  static removeTarea(isbn) {
+  static removeTarea(tarea) {
     const tareas = Store.getTareas();
 
     tareas.forEach((tarea, index) => {
@@ -134,39 +135,40 @@ document.querySelector('#tarea-form').addEventListener('submit', (e) => {
 
 
   // Get form values
-  const titulo = document.querySelector('#nombre').value;
-  const categoria = document.querySelector('#categoria').value;
+  const nombre = document.querySelector('#nombre').value;
+  const categoria_id = document.querySelector('#categoria').value;
   const descripcion = document.querySelector('#descripcion').value;
-  Tareas.crearTarea({ titulo, categoria, descripcion, user_id: 2, categoria_id: 1 });
+  Tareas.crearTarea({ nombre, categoria_id, descripcion, user_id: 2, categoria_id: 1 });
   // // Validate
-  // if(nombre === '' || categoria === '' || descripcion === '') {
-  //   UI.showAlert('Please fill in all fields', 'danger');
-  // } else {
+  if(nombre === '' || categoria_id === '' || descripcion === '') {
+    UI.showAlert('Please fill in all fields', 'danger');
+  } else {
 
-  //   const tarea = new Tarea(nombre, categoria, descripcion)
+    const tarea = new Tarea(nombre, categoria_id, descripcion)
 
-  //   // Add Tarea to UI
-  //   UI.addTareaToList(tarea)
+    // Add Tarea to UI
+    UI.addTareaToList(tarea)
 
-  //   // Add book to store
-  //  Store.addTarea(tarea);
+    // Add Tarea to store
+   Store.addTarea(tarea);
 
-  //   // Show success message
+    // Show success message
   //  UI.showAlert('Tarea Added', 'success');
+  UI.showAlert('Tarea borrada','success')
 
-  //   // Clear fields
-  //   UI.clearFields();
-  // }
+    // Clear fields
+    UI.clearFields();
+  }
 });
 
 // Event: Remove a Tarea
 document.querySelector('#tarea-list').addEventListener('click', (e) => {
-  // Remove book from UI
+  // Remove Tarea from UI
   UI.deleteTarea(e.target);
 
-  // Remove book from store
+  // Remove Tarea from store
   Store.removeTarea(e.target.parentElement.previousElementSibling.textContent);
 
   // Show success message
-  UI.showAlert('Tarea Removed', 'success');
+  // UI.showAlert('Tarea Removed', 'success');
 });
